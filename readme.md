@@ -6,8 +6,7 @@ In this application, we provided the following beans:
 
 * `com.bondtech.configuration.AuthServerConfig.authorizationServerSecurityFilterChain` This bean is 
 the SecurityFilterChain carrying standard security configuration for OAuth2 Authorization 
-Server as well as the configuration to allow the access to the token endpoint without user authentication
-since this server is to support Client Credentials flow using Client Assertion authentication.
+Server.
 * `authorizationServerSettings` This bean is purely for demonstration purpose that we can customize the path to the
 different OAuth2 endpoints exposed by the authorization server.
 *  `registeredClientRepository` This bean prepares a single registered OAuth2 client. In a real-world OAuth2 
@@ -34,4 +33,4 @@ The curl command example:
 
 #### Authorization Server
 Similarly, to bring up the **authorization server**, we also need the aforementioned env variables and the main class is 
-`com.bondtech.AuthServerApplication`
+`com.bondtech.AuthServerApplication`.

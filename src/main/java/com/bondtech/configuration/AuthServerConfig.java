@@ -67,8 +67,7 @@ public class AuthServerConfig {
                                 .oidc(Customizer.withDefaults())	// Enable OpenID Connect 1.0
                 )
                 .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/oauth2/token").permitAll()
-                                .anyRequest().authenticated()
+                                authorize.anyRequest().authenticated()
                 )
                 // Redirect to the login page when not authenticated from the
                 // authorization endpoint
