@@ -1,0 +1,20 @@
+server:
+  port: 8282
+
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:8282
+
+jwt:
+  keystore:
+#    location: file:C:\Users\cheng\OneDrive\Documents\Canada\Profession\jks\authserver.jks
+    location: ${keystore_path}
+    password: ${keystore_password}
+    alias: ${key_alias}
+
+logging.level.org.springframework.security: TRACE
+logging.level.org.springframework.web: TRACE
+logging.level.org.springframework.security.oauth2: TRACE
+logging.level.org.springframework.security.authentication: TRACE

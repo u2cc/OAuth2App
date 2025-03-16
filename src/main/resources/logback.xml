@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!-- Console Appender for logging to the console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender for logging to a file (optional) -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/springboot-app.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger definition -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <!-- Optionally add a file appender if you want file logging -->
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Specific loggers for Spring Security, OAuth2, and other packages -->
+<!--    <logger name="org.springframework.security" level="DEBUG"/>-->
+<!--    <logger name="org.springframework.web.filter" level="DEBUG"/>-->
+<!--    <logger name="org.springframework.security.oauth2" level="DEBUG"/>-->
+<!--    <logger name="org.springframework.security.authentication" level="DEBUG"/>-->
+<!--    <logger name="org.springframework.security.oauth2.server.authorization" level="DEBUG"/>-->
+
+    <!-- Optional: Add more loggers for any other packages you're interested in -->
+    <!-- <logger name="com.example.yourpackage" level="DEBUG"/> -->
+
+</configuration>
