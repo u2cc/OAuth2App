@@ -22,10 +22,10 @@ import java.util.UUID;
 public class Util {
     private static final String CLIENT_ID = "client-id";
     private static final String TOKEN_ENDPOINT = "http://localhost:8282/oauth2/token"; // Update as needed
-    private static final String KEYSTORE_PATH = "C:\\Users\\cheng\\OneDrive\\Documents\\Canada\\Profession\\jks\\authserver.jks"; // Path to your JKS file
-    private static final String KEYSTORE_PASSWORD = "changeit"; // Keystore password
-    private static final String ALIAS = "bondtech.com"; // Alias of the private key
-    private static final String KEY_PASSWORD = "changeit"; // Update as needed
+    private static final String KEYSTORE_PATH = System.getenv("keystore_path"); // Path to your JKS file
+    private static final String KEYSTORE_PASSWORD = System.getenv("keystore_password"); // Keystore password
+    private static final String ALIAS = System.getenv("key_alias"); // Alias of the private key
+    private static final String KEY_PASSWORD = System.getenv("key_password"); // Update as needed
 
     public static String generateClientAssertion() throws Exception {
         // Load private key from file

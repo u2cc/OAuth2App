@@ -135,20 +135,5 @@ public class AuthServerConfig {
         JWKSet jwkSet = new JWKSet(rsaKey);
         return new ImmutableJWKSet<>(jwkSet);
     }
-
-//    private static KeyPair generateRsaKey() {
-//        try {
-//            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
-//            keyPairGenerator.initialize(2048);
-//            return keyPairGenerator.generateKeyPair();
-//        } catch (Exception ex) {
-//            throw new IllegalStateException(ex);
-//        }
-//    }
-
-    @Bean
-    public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
-        return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
-    }
 }
 
