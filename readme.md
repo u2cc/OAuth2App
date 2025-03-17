@@ -36,7 +36,7 @@ The curl command example:
 
 
 ## Client Credentials Flow using Client Assertion for authentication
-<img src="https://github.com/user-attachments/assets/298d033d-e2b4-4d00-bddc-c7caf44109d0" width="700"/>
+<img src="https://github.com/user-attachments/assets/672cc4e8-ca85-42bb-b7a4-ca1d747d4647" width="700"/>
 
 <!-- original raw code after pasting the image
 ![image](https://github.com/user-attachments/assets/298d033d-e2b4-4d00-bddc-c7caf44109d0)
