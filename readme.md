@@ -21,16 +21,19 @@ validating both client_assertion and access_token i.e. `.jwkSetUrl("http://local
 the public keys used for validating client_assertion or customized client authentication logic to use a local keystore
 in validation.
 
-#### Util class
+## Authorization Server
+To bring up the **authorization server**, we  need the environment variables `key_alias`, `key_password`, `keystore_password` and 
+`keystore_path`. The main class is `com.bondtech.AuthServerApplication`.
+
+## Util class
 
 We have the class `com.bondtech.Util` to generate a client_assertion to be used in the request sent to our authorization
-server for access token. The environment variables required are `key_alias`, `key_password`, `keystore_password` and 
+server for access token. The environment variables required are, again, `key_alias`, `key_password`, `keystore_password` and 
 `keystore_path`.
 
 The curl command example:
 `curl -X POST http://localhost:8282/oauth2/token -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=client_credentials" -d "client_id=client-id" -d "client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer" -d "client_assertion=eyJraWQiOiJib25kdGVjaC5jb20iLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjbGllbnQtaWQiLCJzdWIiOiJjbGllbnQtaWQiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgyODIvb2F1dGgyL3Rva2VuIiwiZXhwIjoxNzQyMTU3OTc5LCJpYXQiOjE3NDIxNTQ5NzksImp0aSI6ImM2YmIxOWE3LWZmMWEtNDI2NS1iMjdhLWYzNTA0ZWQ4ZGFlNyJ9.b8MRBV46rOAGWpOHWg0F2fbI3BILExCYyaFBwv2z395rWFFTRVjZUWnlsl8JfJ2mUFdxL8ooI-eFf4GCKC9zMDZvcesm-kJvQ3ry1h3n8EOVcMIImtpx9k2NMGcdlW6Ejx849SxvpjVLFOyYKylwxZuQ4o5u4cDwwCWSmOQi_bMcWuR4UDcbExODdXpAGlo10A0HMEOC6SuK3NK9Cx1OLYiWaEkEoAA3NN8LpWg2cB8belkn5p3W5coZ_hvrqk_XvE9p-ydmaVTwYxbXJIk9K8ROTPoFW747p1EvFGwp0Lhl8sUOV4CsmzZBn62tsCahw2cMLQNkUJpjwmoNu9n2cg"`
 
 
-#### Authorization Server
-Similarly, to bring up the **authorization server**, we also need the aforementioned env variables and the main class is 
-`com.bondtech.AuthServerApplication`.
+## Client Credentials Flow using Client Assertion for authentication
+![image](https://github.com/user-attachments/assets/298d033d-e2b4-4d00-bddc-c7caf44109d0)
